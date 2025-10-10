@@ -7,7 +7,12 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    domains: ['res.cloudinary.com', 'images.unsplash.com'],
+    formats: ['image/webp', 'image/avif'],
+  },
+  serverExternalPackages: ['mongoose'],
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 }
 

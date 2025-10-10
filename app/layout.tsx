@@ -5,9 +5,9 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Social Plex - Connect, Chat, Share',
+  description: 'A modern social media platform with real-time chat, stories, and connections',
+  generator: 'Next.js',
 }
 
 export default function RootLayout({

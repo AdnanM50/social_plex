@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 
-const DB_STRING = process.env.DB_STRING
+const MONGODB_URI = process.env.MONGODB_URI || process.env.DB_STRING
 
-if (!DB_STRING) {
-  throw new Error("Please add your DB_STRING to .env.local")
+if (!MONGODB_URI) {
+  throw new Error("Please add your MONGODB_URI to .env.local")
 }
 
 let isConnected = false
@@ -14,7 +14,7 @@ export async function connectDB() {
   }
 
   try {
-    await mongoose.connect(DB_STRING)
+    await mongoose.connect(MONGODB_URI)
     isConnected = true
     console.log("MongoDB connected successfully")
   } catch (error) {
