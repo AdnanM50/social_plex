@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: 'Social Plex - Connect, Chat, Share',
   description: 'A modern social media platform with real-time chat, stories, and connections',
   generator: 'Next.js',
+  icons: {
+    icon: '/fav.png',
+    shortcut: '/fav.png',
+    apple: '/fav.png',
+  },
 }
 
 export default function RootLayout({
