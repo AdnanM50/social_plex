@@ -33,7 +33,10 @@ export async function POST(request: NextRequest) {
       // Create conversation
       const conversation = new Conversation({
         participants: [currentUser._id, requesterId],
-        unreadCount: new Map(),
+        unreadCount: {
+          [currentUser._id]: 0,
+          [requesterId]: 0,
+        },
       })
       await conversation.save()
 

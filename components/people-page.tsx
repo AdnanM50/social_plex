@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Search, UserPlus, Check, X, MessageSquare } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -31,6 +32,7 @@ export function PeoplePage() {
   const [loading, setLoading] = useState(false)
   const [searchLoading, setSearchLoading] = useState(false)
   const { toast } = useToast()
+  const router = useRouter()
 
   useEffect(() => {
     fetchChatRequests()
@@ -143,7 +145,7 @@ export function PeoplePage() {
         
         if (action === "accept" && data.conversationId) {
           // Redirect to the new conversation
-          window.location.href = `/chat/${data.conversationId}`
+          router.push(`/chat/${data.conversationId}`)
         }
       } else {
         toast({
