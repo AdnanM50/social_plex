@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -37,6 +38,7 @@ export function ChatList() {
   const [chatRequests, setChatRequests] = useState<ChatRequest[]>([])
   const [loading, setLoading] = useState(true)
   const { toast } = useToast()
+  const router = useRouter()
 
   useEffect(() => {
     fetchConversations()
@@ -93,7 +95,7 @@ export function ChatList() {
         
         if (action === "accept" && data.conversationId) {
           // Redirect to the new conversation
-          window.location.href = `/chat/${data.conversationId}`
+          router.push(`/chat/${data.conversationId}`)
         }
       } else {
         toast({

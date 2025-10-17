@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
-import clientPromise from "@/lib/mongodb"
-import { ObjectId } from "mongodb"
 import { getCurrentUser } from "@/lib/auth"
+import { connectDB } from "@/lib/mongoose"
+import Conversation from "@/lib/models/Conversation"
+import User from "@/lib/models/User"
 import { ChatWindow } from "@/components/chat-window"
 import { Card } from "@/components/ui/card"
 
@@ -9,15 +10,14 @@ export default async function ConversationPage({ params }: { params: Promise<{ c
   const { conversationId } = await params
   const currentUser = await getCurrentUser()
 
-  if (!currentUser || !ObjectId.isValid(conversationId)) {
+  if (!currentUser) {
     notFound()
   }
 
-  const client = await clientPromise
-  const db = client.db("social-chat-app")
+  await connectDB()
 
-  const conversation = await db.collection("conversations").findOne({
-    _id: new ObjectId(conversationId),
+  const conversation = await Conversation.findOne({
+    _id: conversationId,
     participants: currentUser._id,
   })
 
@@ -25,13 +25,8 @@ export default async function ConversationPage({ params }: { params: Promise<{ c
     notFound()
   }
 
-  const otherUserId = conversation.participants.find((id: string) => id !== currentUser._id)
-  const otherUser = await db.collection("users").findOne(
-    { _id: new ObjectId(otherUserId) },
-    {
-      projection: { username: 1, fullName: 1, avatar: 1 },
-    },
-  )
+  const otherUserId = conversation.participants.find((id: any) => id.toString() !== currentUser._id)
+  const otherUser = await User.findById(otherUserId).select("username fullName avatar")
 
   if (!otherUser) {
     notFound()
