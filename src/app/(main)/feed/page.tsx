@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CreatePost } from "@/components/create-post"
-import { PostCard } from "@/components/post-card"
-import { StoriesBar } from "@/components/stories-bar"
+import { CreatePost } from "@/src/components/create-post"
+import { PostCard } from "@/src/components/post-card"
+import { StoriesBar } from "@/src/components/stories-bar"
 
 export default function FeedPage() {
   const [posts, setPosts] = useState([])

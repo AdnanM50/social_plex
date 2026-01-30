@@ -4,10 +4,10 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/src/components/ui/button"
 import { Camera } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar"
+import { Badge } from "@/src/components/ui/badge"
 
 interface ProfileHeaderProps {
   user: {

@@ -1,8 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import { getCurrentUser } from "@/lib/auth"
-import { uploadImage } from "@/lib/cloudinary"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
+import { getCurrentUser } from "@/src/lib/auth"
+import { uploadImage } from "@/src/lib/cloudinary"
 
 export async function POST(request: NextRequest) {
   try {

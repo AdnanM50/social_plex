@@ -2,9 +2,9 @@ import { NextRequest } from 'next/server'
 import { Server as NetServer } from 'http'
 import { Server as ServerIO } from 'socket.io'
 import { Socket as NetSocket } from 'net'
-import { connectDB } from '@/lib/mongoose'
-import Message from '@/lib/models/Message'
-import Conversation from '@/lib/models/Conversation'
+import { connectDB } from '@/src/lib/mongoose'
+import Message from '@/src/lib/models/Message'
+import Conversation from '@/src/lib/models/Conversation'
 
 interface SocketServer extends NetServer {
   io?: ServerIO | undefined

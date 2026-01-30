@@ -1,8 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import { generateAccessToken, generateRefreshToken } from "@/lib/jwt"
-import type { OTPVerification } from "@/lib/types"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
+import { generateAccessToken, generateRefreshToken } from "@/src/lib/jwt"
+import type { OTPVerification } from "@/src/lib/types"
 
 export async function POST(request: NextRequest) {
   try {

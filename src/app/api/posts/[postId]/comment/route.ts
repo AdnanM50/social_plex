@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
-import { connectDB } from "@/lib/mongoose"
-import Post from "@/lib/models/Post"
+import { getCurrentUser } from "@/src/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import Post from "@/src/lib/models/Post"
 
 export async function POST(request: NextRequest, { params }: { params: Promise<{ postId: string }> }) {
   try {

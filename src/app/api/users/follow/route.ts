@@ -1,8 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import { getCurrentUser } from "@/lib/auth"
+
 import mongoose from "mongoose"
+import { connectDB } from "@/src/lib/mongoose"
+import { getCurrentUser } from "@/src/lib/auth"
+import User from "@/src/lib/models/User"
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
 
     // Check if already following
     const user = await User.findById(currentUser._id)
-    const isFollowing = user?.following.some((id) => id.toString() === userId)
+    const isFollowing = user?.following.some((id: mongoose.Types.ObjectId) => id.toString() === userId)
 
     if (isFollowing) {
       // Unfollow

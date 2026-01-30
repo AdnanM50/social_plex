@@ -3,11 +3,11 @@
 import type React from "react"
 
 import { useEffect, useState, useRef } from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
 import { Send, ImageIcon } from "lucide-react"
-import { getSocket } from "@/lib/socket"
+import { getSocket } from "@/src/lib/socket"
 import { formatDistanceToNow } from "date-fns"
 
 interface Message {

@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/src/components/ui/avatar"
+import { Badge } from "@/src/components/ui/badge"
+import { Button } from "@/src/components/ui/button"
 import { Check, X } from "lucide-react"
 import { formatDistanceToNow } from "date-fns"
-import { useToast } from "@/hooks/use-toast"
+import { useToast } from "@/src/hooks/use-toast"
 
 interface Conversation {
   _id: string

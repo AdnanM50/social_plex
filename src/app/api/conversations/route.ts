@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
-import { connectDB } from "@/lib/mongoose"
-import Conversation from "@/lib/models/Conversation"
-import User from "@/lib/models/User"
-import { getCurrentUser } from "@/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import Conversation from "@/src/lib/models/Conversation"
+import User from "@/src/lib/models/User"
+import { getCurrentUser } from "@/src/lib/auth"
 
 export async function GET() {
   try {

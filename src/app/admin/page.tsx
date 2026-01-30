@@ -1,6 +1,6 @@
-import { AdminStats } from "@/components/admin-stats"
-import { AdminUsersTable } from "@/components/admin-users-table"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { AdminStats } from "@/src/components/admin-stats"
+import { AdminUsersTable } from "@/src/components/admin-users-table"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card"
 
 export default async function AdminPage() {
   return (

@@ -1,5 +1,5 @@
-import { PeoplePage } from "@/components/people-page"
-import { Card } from "@/components/ui/card"
+import { PeoplePage } from "@/src/components/people-page"
+import { Card } from "@/src/components/ui/card"
 
 export default function People() {
   return (

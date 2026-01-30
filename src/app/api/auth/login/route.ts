@@ -1,9 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
 import bcrypt from "bcryptjs"
-import { generateAccessToken, generateRefreshToken } from "@/lib/jwt"
-import type { LoginCredentials } from "@/lib/types"
+import { generateAccessToken, generateRefreshToken } from "@/src/lib/jwt"
+import type { LoginCredentials } from "@/src/lib/types"
 
 export async function POST(request: NextRequest) {
   try {

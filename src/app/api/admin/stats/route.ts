@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import Post from "@/lib/models/Post"
-import Message from "@/lib/models/Message"
-import Conversation from "@/lib/models/Conversation"
+import { getCurrentUser } from "@/src/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
+import Post from "@/src/lib/models/Post"
+import Message from "@/src/lib/models/Message"
+import Conversation from "@/src/lib/models/Conversation"
 
 export async function GET() {
   try {

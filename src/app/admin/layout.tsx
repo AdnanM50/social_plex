@@ -1,6 +1,6 @@
 import type React from "react"
-import { AdminNav } from "@/components/admin-nav"
-import { getCurrentUser } from "@/lib/auth"
+import { AdminNav } from "@/src/components/admin-nav"
+import { getCurrentUser } from "@/src/lib/auth"
 import { redirect } from "next/navigation"
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

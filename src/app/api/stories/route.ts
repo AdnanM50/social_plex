@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
-import { connectDB } from "@/lib/mongoose"
-import Story from "@/lib/models/Story"
+import { getCurrentUser } from "@/src/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import Story from "@/src/lib/models/Story"
 
 export async function GET() {
   try {

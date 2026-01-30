@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import Conversation from "@/lib/models/Conversation"
+import { getCurrentUser } from "@/src/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
+import Conversation from "@/src/lib/models/Conversation"
 
 export async function POST(request: NextRequest) {
   try {

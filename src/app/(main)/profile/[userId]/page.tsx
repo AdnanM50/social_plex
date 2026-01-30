@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation"
-import { connectDB } from "@/lib/mongoose"
-import User from "@/lib/models/User"
-import Post from "@/lib/models/Post"
-import { getCurrentUser } from "@/lib/auth"
-import { ProfileHeader } from "@/components/profile-header"
-import type { User as UserType } from "@/lib/types"
+import { connectDB } from "@/src/lib/mongoose"
+import User from "@/src/lib/models/User"
+import Post from "@/src/lib/models/Post"
+import { getCurrentUser } from "@/src/lib/auth"
+import { ProfileHeader } from "@/src/components/profile-header"
+import type { User as UserType } from "@/src/lib/types"
 
 export default async function ProfilePage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params

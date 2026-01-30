@@ -1,8 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
-import { connectDB } from "@/lib/mongoose"
-import Conversation from "@/lib/models/Conversation"
-import Message from "@/lib/models/Message"
+import { getCurrentUser } from "@/src/lib/auth"
+import { connectDB } from "@/src/lib/mongoose"
+import Conversation from "@/src/lib/models/Conversation"
+import Message from "@/src/lib/models/Message"
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ conversationId: string }> }) {
   try {

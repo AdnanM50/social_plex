@@ -1,5 +1,5 @@
-import { ChatList } from "@/components/chat-list"
-import { Card } from "@/components/ui/card"
+import { ChatList } from "@/src/components/chat-list"
+import { Card } from "@/src/components/ui/card"
 
 export default function ChatPage() {
   return (
